@@ -47,10 +47,10 @@ function App() {
                 <h3>Статус:{`${weather.description}`}</h3>
               </div>
               <div className='temperature'>
-                <h1>{`${weather.temp.toFixed()}`}{units === 'metric' ? '°C' : '°F'}</h1>
+                <h1>{`${weather.temp.toFixed()}`}°C</h1>
               </div>
             </div>
-          <Descriptions weather={weather} units={units}/>
+          <Descriptions weather={weather}/>
         </div>
         )}
       </div>

@@ -5,10 +5,7 @@ import { BiHappy } from "react-icons/bi";
 import { MdCompress, MdOutlineWaterDrop } from "react-icons/md";
 
 
-const Descriptions = ({weather, units}) => {
-
-    const tempUnit = (units) === 'metric' ? '°C' : '°F';
-    const windUnit = (units) === 'metric' ? 'м/с' : 'm/h';
+const Descriptions = ({weather}) => {
 
     const cards = [
     {
@@ -16,21 +13,21 @@ const Descriptions = ({weather, units}) => {
       icon: <FaArrowDown />,
       title: "минимальная",
       data: weather.temp_min.toFixed(),
-      unit: tempUnit,
+      unit: '°C',
     },
     {
       id: 2,
       icon: <FaArrowUp />,
       title: "максимальная",
       data: weather.temp_max.toFixed(),
-      unit: tempUnit,
+      unit: '°C',
     },
     {
       id: 3,
       icon: <BiHappy />,
       title: "по ощущению",
       data: weather.feels_like.toFixed(),
-      unit: tempUnit,
+      unit: '°C',
     },
     {
       id: 4,
@@ -51,7 +48,7 @@ const Descriptions = ({weather, units}) => {
       icon: <FaWind />,
       title: "скорость ветра",
       data: weather.speed,
-      unit: windUnit,
+      unit: 'м/с',
     },
   ];
 
@@ -66,9 +63,6 @@ const Descriptions = ({weather, units}) => {
             <h2>{`${data}${unit}`}</h2>
         </div>
         ))}
-        
-        
-       
     </div>
   )
 }
